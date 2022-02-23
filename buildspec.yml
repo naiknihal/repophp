@@ -1,0 +1,21 @@
+version: 0.2
+ 
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - apt-get install -y unzip
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - zip hello.zip ./index.php 
+   
+artifacts:
+  type: 
+  files:
+    - index.php
+    - style.css
+    - scripts/install_dependencies
+    - scripts/start_serverg
